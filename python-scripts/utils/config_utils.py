@@ -22,6 +22,7 @@ from yaml import load, dump, FullLoader
 dir_path = os.path.dirname(os.path.realpath(__file__))
 
 SUBSTRA_PATH = os.getenv('SUBSTRA_PATH', '/substra')
+SUBSTRA_NETWORK = 'net_substra'
 
 
 def create_ca_server_config(org):
@@ -162,7 +163,7 @@ def create_core_config(org, peer, metrics='prometheus'):
         yaml_data['metrics']['statsd']['prefix'] = peer['host'].upper().replace('-', '_')
 
     yaml_data['vm']['endpoint'] = 'unix:///host/var/run/docker.sock'
-    yaml_data['vm']['docker']['hostConfig']['NetworkMode'] = 'net_substra'
+    yaml_data['vm']['docker']['hostConfig']['NetworkMode'] = SUBSTRA_NETWORK
 
     peer_core = f'/{SUBSTRA_PATH}/conf/%s/%s' % (org['name'], peer['name'])
     create_directory(peer_core)

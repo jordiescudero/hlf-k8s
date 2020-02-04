@@ -51,7 +51,7 @@ orderer = {
         },
         'port': {
             'internal': 7054,
-            'external': 9054
+            'external': 7054
         },
         'url': 'https://rca-orderer:7054',
         'logfile': f'{SUBSTRA_PATH}/data/log/rca-orderer.log',

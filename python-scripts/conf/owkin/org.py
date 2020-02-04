@@ -48,7 +48,7 @@ owkin = {
         },
         'port': {
             'internal': 7054,
-            'external': 7054
+            'external': 8054
         },
         'url': 'https://rca-owkin:7054',
         'logfile': f'{SUBSTRA_PATH}/data/log/rca-owkin.log',

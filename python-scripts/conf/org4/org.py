@@ -22,41 +22,41 @@ from .users.user import user
 
 SUBSTRA_PATH = os.getenv('SUBSTRA_PATH', '/substra')
 
-chunantes = {
+org4 = {
     'type': 'client',
-    'name': 'chu-nantes',
-    'mspid': 'chu-nantesMSP',
-    'anchor_tx_file': f'{SUBSTRA_PATH}/data/orgs/chu-nantes/anchors.tx',
+    'name': 'org4',
+    'mspid': 'org4MSP',
+    'anchor_tx_file': f'{SUBSTRA_PATH}/data/orgs/org4/anchors.tx',
     'tls': {
         # careful, `ca-cert.pem` is the default cert name file and a example file with this name is already present in
-        # the docker image, do not forget to remove these examples files if naming the same way
+        # the docker image, do not forget to remove these examples files in your docker CMD overriding if naming the same way
         'certfile': {
-            'external': f'{SUBSTRA_PATH}/data/orgs/chu-nantes/tls-ca-cert.pem',
+            'external': f'{SUBSTRA_PATH}/data/orgs/org4/tls-ca-cert.pem',
             'internal': '/etc/hyperledger/fabric/ca/tls-ca-cert.pem'
         },
         'clientkey': ''
     },
     'ca': {
-        'name': 'rca-chu-nantes',
-        'host': 'rca-chu-nantes',
+        'name': 'rca-org4',
+        'host': 'rca-org4',
         'certfile': {
-            'external': f'{SUBSTRA_PATH}/data/orgs/chu-nantes/ca-cert.pem',
+            'external': f'{SUBSTRA_PATH}/data/orgs/org4/ca-cert.pem',
             'internal': '/etc/hyperledger/fabric/ca/ca-cert.pem'
         },
         'keyfile': {
-            'external': f'{SUBSTRA_PATH}/data/orgs/chu-nantes/ca-key.pem',
+            'external': f'{SUBSTRA_PATH}/data/orgs/org4/ca-key.pem',
             'internal': '/etc/hyperledger/fabric/ca/ca-key.pem'
         },
         'port': {
             'internal': 7054,
-            'external': 9054
+            'external': 11054
         },
-        'url': 'https://rca-chu-nantes:7054',
-        'logfile': f'{SUBSTRA_PATH}/data/log/rca-chu-nantes.log',
-        'server-config-path': f'{SUBSTRA_PATH}/conf/chu-nantes/fabric-ca-server-config.yaml',
-        'client-config-path': f'{SUBSTRA_PATH}/conf/chu-nantes/fabric-ca-client-config.yaml',
+        'url': 'https://rca-org4:7054',
+        'logfile': f'{SUBSTRA_PATH}/data/log/rca-org4.log',
+        'server-config-path': f'{SUBSTRA_PATH}/conf/org4/fabric-ca-server-config.yaml',
+        'client-config-path': f'{SUBSTRA_PATH}/conf/org4/fabric-ca-client-config.yaml',
         'affiliations': {
-            'chu-nantes': ['nantes']
+            'org4': ['lyon']
         },
         'users': {
             'bootstrap_admin': bootstrap_admin,
@@ -67,14 +67,14 @@ chunantes = {
         'user': user,
     },
     'csr': {
-        'cn': 'rca-chu-nantes',
+        'cn': 'rca-org4',
         # The "hosts" value is a list of the domain names which the certificate should be valid for.
-        'hosts': ['rca-chu-nantes'],
+        'hosts': ['rca-org4'],
         'names': [
             {'C': 'FR',
-             'ST': 'Loire-Atlantique',
-             'L': 'Nantes',
-             'O': 'chu-nantes',
+             'ST': 'Rhone',
+             'L': 'Lyon',
+             'O': 'org4',
              'OU': None}
         ],
     },
