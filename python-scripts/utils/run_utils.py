@@ -230,7 +230,7 @@ class Client(object):
 
     def makePolicy(self, orgs_mspid):
         roles =[f"'{x}.member'" for x in orgs_mspid]
-        policy = f"OR({', '.join(roles)})"
+        policy = f"AND({', '.join(roles)})"
         print('policy: ', policy, flush=True)
 
         return s2d().parse(policy)
