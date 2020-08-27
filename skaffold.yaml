@@ -47,7 +47,7 @@ deploy:
           hlf-ord.enabled: true
           hlf-ord.monitor.enabled: true
           appChannels[0].channelName: mychannel
-          appChannels[1].channelName: yourchannel
+          appChannels[1].channelName: channelB
           # Add Org to system channel to allows them to adminstrate application channels
           systemChannel.organizations[0].org: MyOrg1
           systemChannel.organizations[0].mspid: MyOrg1MSP
@@ -107,7 +107,7 @@ deploy:
           appChannels[0].chaincodePolicy: OR('MyOrg1MSP.member'\,'MyOrg2MSP.member')
           appChannels[0].chaincodeName: mycc
           appChannels[0].chaincodeVersion: "1.0"
-          appChannels[1].channelName: yourchannel
+          appChannels[1].channelName: channelB
           appChannels[1].organizations[0].org: MyOrg1
           appChannels[1].organizations[0].mspid: MyOrg1MSP
           appChannels[1].organizations[0].configUrl: network-org-1-peer-1-hlf-k8s-config-operator.org-1/config/configOrgWithAnchors.json
@@ -163,7 +163,7 @@ deploy:
           appChannels[0].chaincodePolicy: OR('MyOrg1MSP.member'\,'MyOrg2MSP.member')
           appChannels[0].chaincodeName: mycc
           appChannels[0].chaincodeVersion: "1.0"
-          appChannels[1].channelName: yourchannel
+          appChannels[1].channelName: channelB
           appChannels[1].chaincodePolicy: OR('MyOrg1MSP.member'\,'MyOrg2MSP.member')
           appChannels[1].chaincodeName: mycc
           appChannels[1].chaincodeVersion: "1.0"
